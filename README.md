@@ -1,3 +1,8 @@
+<img width="1199" height="628" alt="Screenshot 2026-10-05 at 2 21 52 AM" src="https://github.com/user-attachments/assets/797146ff-9ab3-4016-93dc-01d5607715d1" />
+<img width="1197" height="752" alt="Screenshot 2026-10-05 at 2 22 00 AM" src="https://github.com/user-attachments/assets/bc086fa0-3bdf-4fc1-93a9-65732e97bdf6" />
+<img width="1190" height="759" alt="Screenshot 2026-10-05 at 2 22 16 AM" src="https://github.com/user-attachments/assets/ea74fce1-4688-4700-a1be-f2dc1a4e3837" />
+<img width="1195" height="752" alt="Screenshot 2026-10-05 at 2 22 29 AM" src="https://github.com/user-attachments/assets/b60d5d38-30e9-45fb-aef5-c926a1177a92" />
+<img width="1178" height="726" alt="Screenshot 2026-10-05 at 2 22 37 AM" src="https://github.com/user-attachments/assets/ea4203be-9f2b-4e76-9fe1-e407951a113c" />
 # 🌍 Public Health Trend Analysis & Life Expectancy Prediction
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
