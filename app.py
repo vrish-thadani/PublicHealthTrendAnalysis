@@ -11,83 +11,102 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# --- Custom CSS for Styling (High Contrast & Enterprise Ready) ---
+# --- Custom CSS for Styling (Vibrant, Professional & Colorful) ---
 st.markdown("""
 <style>
-    /* Main Background & Text */
+    /* Main Background with a subtle animated gradient */
     .stApp {
-        background-color: #f8fafc;
+        background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
     
     /* Typography */
     h1, h2, h3, h4, h5, h6 {
-        color: #0f172a !important;
-        font-weight: 700 !important;
-        letter-spacing: -0.02em;
+        color: #1e1b4b !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.03em;
+        background: -webkit-linear-gradient(45deg, #4f46e5, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
     p, li, span {
         color: #334155;
     }
     
-    /* Sidebar styling without breaking dropdowns */
+    /* Sidebar styling with vibrant gradient */
     [data-testid="stSidebar"] {
-        background-color: #ffffff;
-        border-right: 1px solid #e2e8f0;
+        background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%);
         padding-top: 1.5rem;
     }
-    [data-testid="stSidebar"] .css-17lntkn {
-        color: #0f172a;
+    [data-testid="stSidebar"] * {
+        color: #f8fafc !important;
     }
     
-    /* Metrics Cards */
+    /* Metrics Cards - Glassmorphism effect */
     [data-testid="stMetricValue"] {
         font-size: 2.2rem !important;
-        color: #0f172a !important;
+        color: #4f46e5 !important;
         font-weight: 800 !important;
+        -webkit-text-fill-color: #4f46e5 !important;
     }
     [data-testid="stMetricLabel"] {
         font-size: 1rem !important;
         color: #64748b !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
         text-transform: uppercase;
         letter-spacing: 0.05em;
     }
     div[data-testid="metric-container"] {
-        background-color: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 0.5rem;
-        padding: 1.25rem;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    div[data-testid="metric-container"]:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
     
-    /* Buttons */
+    /* Buttons - Vibrant Gradients */
     .stButton>button {
-        background-color: #2563eb;
-        color: #ffffff;
-        font-weight: 600;
-        border-radius: 0.375rem;
+        background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+        color: #ffffff !important;
+        font-weight: 700;
+        border-radius: 0.5rem;
         border: none;
-        padding: 0.625rem 1.25rem;
-        transition: background-color 0.15s ease-in-out;
+        padding: 0.75rem 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4);
+        transition: all 0.3s ease;
     }
     .stButton>button:hover {
-        background-color: #1d4ed8;
-        color: #ffffff;
+        transform: scale(1.05);
+        box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.6);
+        color: #ffffff !important;
     }
     
     /* Information Cards */
     .corporate-card {
-        background-color: #ffffff;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
         padding: 1.5rem;
-        border-radius: 0.5rem;
-        border: 1px solid #e2e8f0;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        margin-bottom: 1rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1.5rem;
+        transition: all 0.2s ease;
+    }
+    .corporate-card:hover {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
     .corporate-card h4 {
         margin-top: 0;
-        color: #0f172a;
+        background: none;
+        -webkit-text-fill-color: #1e293b;
+        color: #1e293b !important;
         margin-bottom: 0.75rem;
     }
     .corporate-card p {
@@ -96,35 +115,39 @@ st.markdown("""
         line-height: 1.6;
     }
     
-    /* Decorative Left Borders for emphasis */
-    .border-blue { border-left: 4px solid #3b82f6; }
-    .border-emerald { border-left: 4px solid #10b981; }
-    .border-indigo { border-left: 4px solid #6366f1; }
+    /* Vibrant Borders for cards */
+    .border-blue { border-left: 5px solid #3b82f6; }
+    .border-emerald { border-left: 5px solid #10b981; }
+    .border-indigo { border-left: 5px solid #8b5cf6; }
     
     /* Prediction Banner */
     .prediction-banner {
-        background-color: #f0fdf4;
-        border: 1px solid #bbf7d0;
-        border-left: 6px solid #22c55e;
-        padding: 2rem;
-        border-radius: 0.5rem;
+        background: linear-gradient(135deg, #fdf4ff 0%, #f0fdf4 100%);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 6px solid #ec4899;
+        padding: 2.5rem;
+        border-radius: 1rem;
         margin-top: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        text-align: center;
     }
     .prediction-banner h2 {
-        color: #166534 !important;
+        background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin: 0 0 0.5rem 0;
-        font-size: 2.25rem;
+        font-size: 3rem;
     }
     .prediction-banner p {
-        color: #15803d;
+        color: #475569;
         margin: 0;
-        font-weight: 500;
-        font-size: 1.1rem;
+        font-weight: 600;
+        font-size: 1.2rem;
     }
     
     /* Divider */
     hr {
-        border-top: 1px solid #e2e8f0;
+        border-top: 2px dashed #cbd5e1;
         margin: 2rem 0;
     }
 </style>
